@@ -1,1 +1,67 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+}
+
+.content-card {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 20px;
+  padding: 32px;
+  border: 1px solid rgba(15, 35, 63, 0.07);
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 8px 24px rgba(15, 35, 63, 0.06);
+}
+
+.content-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, #0f233f 0 28%, #cbb7a3 28% 100%);
+}
+
+.section-heading {
+  margin-bottom: 18px;
+}
+
+.section-heading h2 {
+  margin: 0;
+  color: #0f233f;
+  font-size: 20px;
+  letter-spacing: 0.04em;
+}
+
+.section-heading::after {
+  content: "";
+  display: block;
+  width: 42px;
+  height: 3px;
+  margin-top: 10px;
+  border-radius: 3px;
+  background: #b7a18d;
+}
+
+.content-card p {
+  line-height: 1.8;
+}
+
+@media (max-width: 480px) {
+  .content-card {
+    padding: 22px;
+  }
+
+  .section-heading h2 {
+    font-size: 18px;
+  }
+}

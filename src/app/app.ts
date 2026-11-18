@@ -1,12 +1,15 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core';
+import { Header } from './header/header';
 import { ProfileCard } from './profile-card/profile-card';
+import { Skills } from './skills/skills';
+import { Footer } from './footer/footer';
+import { Proficiency } from './proficiency';
 
 @Component({
-  imports: [RouterOutlet, ProfileCard],
   selector: 'app-root',
-  styleUrl: './app.css',
+  imports: [Header, ProfileCard, Skills, Footer],
   templateUrl: './app.html',
+  styleUrl: './app.css'
 })
 export class App {
   fullName = 'Francine Kimea A. Sto. Domingo';
@@ -29,27 +32,16 @@ export class App {
     'Git and GitHub'
   ];
 
-technicalProficiencies = [
-  {
-    category: 'Frontend Development',
-    technologies: 'HTML5, CSS3, JavaScript, TypeScript, Angular, Vue.js'
-  },
-  {
-    category: 'Backend Development',
-    technologies: 'Node.js, Express.js'
-  },
-  {
-    category: 'Database & Development Tools',
-    technologies: 'MongoDB, Git, GitHub'
-  }
-];
+  proficiencies: Proficiency[] = [
+    { tool: 'Visual Studio Code', level: 'Intermediate' },
+    { tool: 'Git and GitHub', level: 'Beginner' },
+    { tool: 'Node.js and npm', level: 'Beginner' },
+    { tool: 'Angular CLI', level: 'Beginner' }
+  ];
 
+  message = 'Click any skill above to select it.';
 
-  message = 'Welcome to my profile!';
-  clickCount = 0;
-
-  showMessage() {
-    this.clickCount++;
-    this.message = `You clicked the button ${this.clickCount} time(s).`;
+  onSkillSelected(skill: string) {
+    this.message = `You selected: ${skill}`;
   }
 }

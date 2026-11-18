@@ -1,0 +1,20 @@
+<header class="intro">
+  <span class="eyebrow">STUDENT PORTFOLIO / WEB DEVELOPMENT</span>
+
+  <h1>{{ fullName() }}</h1>
+  <p class="subtitle">Information Technology Student</p>
+
+  <div class="contact-info">
+    <span>{{ location() }}</span>
+    <span>{{ phone() }}</span>
+    <a [href]="'mailto:' + email()">{{ email() }}</a>
+  </div>
+</header>
+
+<section class="content-card personal-profile">
+  <div class="section-heading">
+    <h2>PERSONAL PROFILE</h2>
+  </div>
+
+  <p>{{ profile() }}</p>
+</section>
