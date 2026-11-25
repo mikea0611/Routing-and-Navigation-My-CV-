@@ -1,48 +1,55 @@
-:host {
-  display: block;
-  min-height: 100vh;
-  color: #02000b;
-  font-family: Arial, sans-serif;
-  background-color: #e8ded4;
-  background-image:
-    radial-gradient(circle at 8% 8%, rgba(255, 255, 255, 0.55), transparent 32%),
-    radial-gradient(circle at 92% 55%, rgba(15, 35, 63, 0.05), transparent 34%);
+.topnav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 24px;
+  padding: 14px 36px;
+  background: #0f233f;
+  border-bottom: 4px solid #cbb7a3;
+  box-shadow: 0 4px 16px rgba(15, 35, 63, 0.12);
 }
 
-.resume {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 44px 30px 55px;
+.brand {
+  color: #ffffff;
+  font-size: 1.25rem;
+  font-weight: bold;
+  letter-spacing: 0.03em;
+  text-decoration: none;
 }
 
-.about-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: 20px;
-  margin-bottom: 20px;
-  align-items: start;
-}
-
-.about-grid app-profile-card {
-  display: block;
-}
-
-.interaction p {
+.topnav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
   margin: 0;
-  padding: 16px 20px;
-  border-left: 4px solid #0f233f;
-  border-radius: 0 8px 8px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.topnav ul a {
+  display: block;
+  padding: 8px 16px;
+  border-radius: 8px;
+  color: #e8ded4;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.topnav ul a:hover {
+  background: rgba(203, 183, 163, 0.18);
+  color: #ffffff;
+}
+
+.topnav ul a.active {
   background: #f3ece5;
   color: #0f233f;
-  font-weight: 600;
+  font-weight: bold;
 }
 
-@media (max-width: 768px) {
-  .resume {
-    padding: 20px 15px 35px;
-  }
-
-  .about-grid {
-    grid-template-columns: 1fr;
+@media (max-width: 600px) {
+  .topnav {
+    padding: 12px 18px;
   }
 }

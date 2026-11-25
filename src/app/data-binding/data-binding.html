@@ -1,0 +1,47 @@
+<main class="resume">
+  <h1>{{ pageTitle }}</h1>
+  <p class="lead">Welcome to Francine&rsquo;s portfolio lab—explore how Angular connects my TypeScript profile data to this live HTML template.</p>
+
+<section class="demo">
+  <h2 class="section-title">1. Interpolation &nbsp;<code ngNonBindable>{{ }}</code></h2>
+  <p>Current page: <strong>{{ pageTitle }}</strong></p>
+  <p>I currently list <strong>{{ skills.length }}</strong> web development skills on my CV, starting with <strong>{{ skills[0] }}</strong>.</p>
+  <p>Skills left to reach my goal of 10: {{ 10 - skills.length }}</p>
+</section>
+
+
+  <section class="demo">
+    <h2 class="section-title">2. Property binding &nbsp;<code>[property]</code></h2>
+    <p>Skill: <strong>{{ skillName }}</strong> &mdash; {{ skillLevel }}%</p>
+    <progress [value]="skillLevel" max="100"></progress>
+    <p class="hint">
+      The bar's <code>value</code> and each button's <code>disabled</code> property are bound to <code>skillLevel</code>.
+    </p>
+  </section>
+
+  <section class="demo">
+    <h2 class="section-title">3. Event binding &nbsp;<code>(event)</code></h2>
+    <div class="buttons">
+      <button type="button" (click)="decrease()" [disabled]="skillLevel === 0">&minus; 10%</button>
+      <button type="button" (click)="increase()" [disabled]="skillLevel === 100">+ 10%</button>
+    </div>
+    <p class="hint">Clicking a button calls a method in the class, which changes <code>skillLevel</code>.</p>
+  </section>
+
+  <section class="demo">
+    <h2 class="section-title">4. Two-way binding &nbsp;<code>[(ngModel)]</code></h2>
+    <p class="hint">Leave a quick note or feedback for Francine&rsquo;s portfolio—watch it update live below.</p>
+
+    <label for="visitorName">Visitor or Classmate Name</label>
+    <input id="visitorName" type="text" [(ngModel)]="visitorName" placeholder="e.g., Francine Kimea" />
+
+    <label for="visitorMessage">Portfolio Feedback or Note</label>
+    <textarea id="visitorMessage" rows="3" [(ngModel)]="visitorMessage" placeholder="Write a comment about my CV or projects..."></textarea>
+
+    <div class="preview">
+      <p class="preview-label">Live Guestbook Preview</p>
+      <p><strong>{{ visitorName || 'Anonymous Visitor' }}</strong> left a note for Francine:</p>
+      <p>&ldquo;{{ visitorMessage || 'Your feedback will appear here in real time as you type.' }}&rdquo;</p>
+    </div>
+  </section>
+</main>
